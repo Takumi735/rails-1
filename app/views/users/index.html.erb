@@ -1,0 +1,49 @@
+    <div class="index-container">
+        <div class="index-title">
+            <h4>予定一覧</h4>
+            <%= link_to "新規追加", :new_user, class: "btn btn-primary mb-3" %>
+        </div>
+
+    <%= flash.notice %>
+
+        <table class="index-table table p-4 shadow">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>タイトル</th>
+                    <th>開始日</th>
+                    <th>終了日</th>
+                    <th>終日</th>
+                    <th>更新日時</th>
+                    <th>詳細</th>
+                    <th>編集</th>
+                    <th>削除</th>
+                </tr>
+            </thead>
+        
+            <tbody>
+            <% @users.each do |user| %>
+            <tr>
+                <td><%= user.id %></td>
+                <td><%= user.title %></td>
+                <td><%= user.start_date ? user.start_date.to_s(:datetime_jp) : "" %></td>
+                <td><%= user.end_date ? user.end_date.to_s(:datetime_jp) : "" %></td>
+                <td><%= user.all_day ? "⚪︎" : ""  %></td>
+                <td><%= user.updated_at.to_s(:custom_datetime) %></td>
+                <td><%= link_to "詳細", user, class: "text-decoration-none" %></td>
+                <td><%= link_to "編集", [:edit, user], class: "text-decoration-none" %></td>
+                <td><%= link_to "削除", user, method: :delete, data: { confirm: "本当に削除しますか？" }, class: "text-decoration-none" %></td>
+
+            </tr>
+            <% end %>
+            </tbody>
+        </table>
+
+        <div class="card col-md-12 p-3 shadow">
+            <div class="flex-container">
+                <p>予定合計 <%= @users.count %> 件</p>
+                <p>本日の日付 <%= Time.now.strftime("%Y/%m/%d") %></p>
+            </div>
+        </div>
+
+    </div>

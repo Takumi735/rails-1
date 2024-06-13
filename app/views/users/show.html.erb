@@ -1,0 +1,35 @@
+<div class="show-container">
+  <%= link_to "一覧に戻る", :users, class: "text-decoration-none" %>
+
+  <div class="show-title">
+  <h4><%= @user.title %></h4>
+  <%= link_to "編集", [:edit, @user], class: "btn btn-primary " %>
+  </div>
+
+
+    <div class="card col-md-8 p-4 shadow" style="width: 40rem;" >
+    <table class="table">
+    <tr>
+      <th>開始日</th>
+      <td><%= @user.start_date.to_s(:datetime_jp) %></td>
+    </tr>
+
+    <tr>
+      <th>終了日</th>
+      <td><%= @user.end_date.to_s(:datetime_jp) %></td>
+    </tr>
+
+    <tr>
+      <th>終日</th>
+      <td><%= @user.all_day ? "⚪︎" : ""  %></td>
+    </tr>
+
+    <tr>
+      <th>スケジュールメモ</th>
+      <td><%= @user.schedule_memo %></td>
+    </tr>
+    </table>
+  </div>
+
+</div>
+

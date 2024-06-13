@@ -13,3 +13,38 @@
  *= require_tree .
  *= require_self
  */
+
+.schedule-title {
+   width: 100%;
+   text-align: center;
+   padding:1em;
+}
+
+
+
+.index-container {
+   width: 980px; 
+   margin: 0 auto;
+}
+.index-title {
+   display: flex;
+   justify-content: space-between;
+}
+.index-table {
+   border: solid;
+}
+.flex-container {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.show-container {
+   padding: 0 400px;
+   
+}   
+.show-title {
+   display: flex;
+   justify-content: center;
+
+}
