@@ -1,0 +1,13 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.schedule-header {
+    display: flex;
+    justify-content: space-between;
+ }
+ 
+ .index-container {
+    width: 960px; /* 任意の幅 */
+    margin: 0 auto; /* ページの中央に配置 */
+ }
